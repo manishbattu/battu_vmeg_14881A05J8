@@ -77,11 +77,27 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+	 int n=students.length;
+	 for(int i=0;i<n;i++)
+	 {
+		 if(students[i]==student)
+		 {
+			 students[i]=students[i+1];
+		 }
+	 }
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+		int n=students.length;
+		for(int i=0;i<n;i++)
+		{
+			if(students[i]==students[index])
+			{
+			students[i]=students[i+1];
+			}
+		}
 	}
 
 	@Override
@@ -102,6 +118,14 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
+		int n=students.length;
+		Student temp;
+		for(int i=0;i<n;i++)
+		{
+			temp=students[i];
+			students[i]=students[i+1];
+			students[i+1]=temp;
+		}
 	}
 
 	@Override
@@ -143,6 +167,15 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student getNextStudent(Student student) {
 		// Add your implementation here
-		return null;
+		int n=students.length;
+		Student temp=student;
+		for(int i=0;i<n;i++)
+		{
+			if(students[i]==student)
+			{
+				temp=students[i+1];
+			}
+		}
+		return temp;
 	}
 }
